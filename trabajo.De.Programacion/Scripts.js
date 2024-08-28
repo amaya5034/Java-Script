@@ -15,8 +15,8 @@ function closeAlert() {
 function demoWhile() {
     let i = 0;
     let result = '';
-    while (i < 5) { //muestra 0, luego 1, luego 2
-        alert(i)
+    while (i < 5) {
+        alert(i);
         result += i + ' ';
         i++;
     }
@@ -24,8 +24,8 @@ function demoWhile() {
 
 function demoFor() {
     let result = '';
-    for (let i = 0; i < 5; i++) { //muestra 0, luego 1, luego 2
-        alert(i)
+    for (let i = 0; i < 5; i++) {
+        alert(i);
         result += i + ' ';
     }
 }
@@ -44,7 +44,6 @@ function demoSwitch(value) {
         default:
             showAlert('Otro número');
     }
-    
 }
 
 function demoArray() {
@@ -69,6 +68,17 @@ let user = {
     }
 };
 
+// Nueva función User y demostración
+function User(name) {
+    this.name = name;
+    this.isAdmin = false;
+}
+
+function demoUser() {
+    let newUser = new User("Jack");
+    showAlert(`Nombre: ${newUser.name}<br>Es admin: ${newUser.isAdmin}`);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     let buttonsDiv = document.getElementById('buttons');
     
@@ -77,10 +87,10 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: 'Bucle For', func: demoFor },
         { name: 'Numeros al azar', func: () => demoSwitch(2) },
         { name: 'Listado de cosas', func: demoArray },
-        { name: 'Saludo', func: () => user.sayHi() }
+        { name: 'Saludo', func: () => user.sayHi() },
+        { name: 'Usuario', func: demoUser }  // Nuevo botón para demostrar User
     ];
     
-
     demoFunctions.forEach(demo => {
         let button = document.createElement('button');
         button.textContent = demo.name;
@@ -91,4 +101,4 @@ document.addEventListener('DOMContentLoaded', function() {
     showAlert('¡Bienvenido! Haz clic en los botones para ver las demostraciones.');
 });
 
-console.log("Java script de forma interactiva");
+console.log("JavaScript de forma interactiva");
