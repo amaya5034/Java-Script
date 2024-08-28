@@ -1,3 +1,4 @@
+'use strict'
 // 2.13 a 2.18
 // <--while-->
 // // // caps de el 2.13 a el 2.18
